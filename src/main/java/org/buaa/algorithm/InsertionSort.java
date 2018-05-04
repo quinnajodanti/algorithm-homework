@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 public class InsertionSort
 {
-	public static void InsertSort(int[] arr)
+	private static void insertSort(int[] arr)
 	{
 		int i, j;
 		int n = arr.length;
@@ -29,7 +29,7 @@ public class InsertionSort
 	{
 		int[] array = new int[]{6, 2, 7, 3, 4, 1, 9, 0, 5, 8};
 		System.out.println("Before sort:" + Arrays.toString(array));
-		InsertionSort.InsertSort(array);
+		InsertionSort.insertSort(array);
 		System.out.println("After sort:" + Arrays.toString(array));
 	}
 }
