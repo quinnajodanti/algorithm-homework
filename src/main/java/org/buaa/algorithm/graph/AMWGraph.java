@@ -4,20 +4,18 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 
 /**
- * @author beanlam
  * @description 邻接矩阵模型类
- * @time 2015.4.17
  */
 public class AMWGraph {
     private ArrayList vertexList;//存储点的链表
     private int[][] edges;//邻接矩阵，用来存储边
-    private boolean[] isVisited;
+//    private boolean[] isVisited;
 
     public AMWGraph(int n) {
         //初始化矩阵，一维数组，和边的数目
         edges = new int[n][n];
         vertexList = new ArrayList(n);
-        isVisited = new boolean[n];
+//        isVisited = new boolean[n];
     }
 
     //得到结点的个数
@@ -72,7 +70,7 @@ public class AMWGraph {
     }
 
     //私有函数，深度优先遍历
-    private void depthFirstSearch(int i) {
+    private void depthFirstSearch(boolean[] isVisited, int i) {
         //首先访问该结点，在控制台打印出来
         System.out.print(getValueByIndex(i) + "  ");
         //置该结点为已访问
@@ -81,7 +79,7 @@ public class AMWGraph {
         int w = getFirstNeighbor(i);//
         while (w != -1) {
             if (!isVisited[w]) {
-                depthFirstSearch(w);
+                depthFirstSearch(isVisited, w);
             }
             w = getNextNeighbor(i, w);
         }
@@ -89,16 +87,17 @@ public class AMWGraph {
 
     //对外公开函数，深度优先遍历，与其同名私有函数属于方法重载
     public void depthFirstSearch() {
+        boolean[] isVisited = new boolean[getNumOfVertex()];
         for (int i = 0; i < getNumOfVertex(); i++) {
             //因为对于非连通图来说，并不是通过一个结点就一定可以遍历所有结点的。
             if (!isVisited[i]) {
-                depthFirstSearch(i);
+                depthFirstSearch(isVisited, i);
             }
         }
     }
 
     //私有函数，广度优先遍历
-    private void broadFirstSearch(int i) {
+    private void broadFirstSearch(boolean[] isVisited, int i) {
         int u, w;
         LinkedList queue = new LinkedList();
 
@@ -127,9 +126,10 @@ public class AMWGraph {
 
     //对外公开函数，广度优先遍历
     public void broadFirstSearch() {
+        boolean[] isVisited = new boolean[getNumOfVertex()];
         for (int i = 0; i < getNumOfVertex(); i++) {
             if (!isVisited[i]) {
-                broadFirstSearch(i);
+                broadFirstSearch(isVisited, i);
             }
         }
     }
