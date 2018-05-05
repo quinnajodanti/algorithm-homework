@@ -1,6 +1,6 @@
 package org.buaa.algorithm;
 
-public class SteelBar {
+public class DynamicSteelBar {
 
     /**
      * 递归方法，时间复杂度为O（2的N次方），因为考察了 2的N-1次方种可能
