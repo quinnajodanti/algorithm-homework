@@ -26,8 +26,6 @@ public class Backpack
 				}
 			}
 		}
-		//printPack(c, w, m, n);
-
 	}
 
 	/**
