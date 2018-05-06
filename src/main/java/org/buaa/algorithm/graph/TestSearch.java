@@ -2,7 +2,7 @@ package org.buaa.algorithm.graph;
 
 public class TestSearch {
     public static void main(String args[]) {
-        int n = 8, e = 9;//分别代表结点个数和边的数目
+        int n = 8;//分别代表结点个数和边的数目
         String labels[] = {"1", "2", "3", "4", "5", "6", "7", "8"};//结点的标识
         AMWGraph graph = new AMWGraph(n);
         for (String label : labels) {
