@@ -1,6 +1,7 @@
 package org.buaa.algorithm;
 
 import java.util.Arrays;
+import java.util.Random;
 
 public class QuickSort
 {
@@ -56,7 +57,12 @@ public class QuickSort
 
 	public static void main(String[] args)
 	{
-		int[] array = new int[]{6, 2, 7, 3, 4, 1, 9, 0, 5, 8};
+		int[] array = new int[10];
+		Random r = new Random();
+		for (int i = 0; i < 10; i++) {
+			int b = r.nextInt(100);
+			array[i] = b;
+		}
 		System.out.println("Before sort:" + Arrays.toString(array));
 		quickSort(array);
 		System.out.println("After sort:" + Arrays.toString(array));
