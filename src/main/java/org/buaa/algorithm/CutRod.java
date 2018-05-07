@@ -31,7 +31,7 @@ public class CutRod
 			//  ... 以此类推
 			for (int i = 1; i <= j; i++)
 			{
-				q = Math.max(q, p[i] + r[j - i]);
+				q = Math.max(q, p[i - 1] + r[j - i]);
 			}
 			//记录 j 的最优值
 			r[j] = q;
