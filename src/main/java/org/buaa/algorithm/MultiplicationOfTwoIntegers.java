@@ -1,8 +1,5 @@
 package org.buaa.algorithm;
 
-/**
- * Created by zhangsw on 2018/5/4.
- */
 public class MultiplicationOfTwoIntegers
 {
 	public static String multiply(String num1, String num2)

@@ -2,9 +2,6 @@ package org.buaa.algorithm;
 
 import java.util.Arrays;
 
-/**
- * Created by zhangsw on 2018/5/4.
- */
 public class MultiplicationOfTwoMatrices
 {
 	public static int[][] matrix(int a[][], int b[][])
